@@ -33,7 +33,7 @@ public class Nodo {
 
 	@Override
 	public String toString() {
-		return "Nodo [contenido=" + contenido + ", enlace=" + enlace + "]\n";
+		return "Nodo [contenido=\n" + contenido + ", enlace=" + enlace + "]";
 	}
 	
 	

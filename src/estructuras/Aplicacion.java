@@ -20,6 +20,7 @@ public class Aplicacion {
 		String opc= (String) o;
 	
 		do{
+			
 		if(opc.equals("Inicio")){
 			String e= JOptionPane.showInputDialog("Ingrese el nombre: ");
 			lista.insertarInicio(e);
@@ -36,6 +37,8 @@ public class Aplicacion {
 		if(c==JOptionPane.YES_OPTION){
 			String k= JOptionPane.showInputDialog("Ingrese el nombre a buscar: ");
 			lista.buscar(k);
+			int n= Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición: "));
+			lista.buscando(n);
 		}
 	}
 

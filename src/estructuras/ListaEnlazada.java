@@ -36,6 +36,7 @@ public class ListaEnlazada {
 		else{
 			inicio= new Nodo(elemento, actual);
 		}
+		tam++;
 	}
 	
 	public void  buscar(String k){
@@ -63,9 +64,20 @@ public class ListaEnlazada {
 			JOptionPane.showMessageDialog(null, s);
 		}
 		
+			
+	}
+	
+	public void  buscando(int num){
+		Nodo actual= inicio;
 		
-		
-		
+		Nodo aux=actual;
+		int i=0;
+		while(i<num){
+		 aux= actual;
+		 actual= actual.getEnlace();
+		 i++;			
+		}
+			JOptionPane.showMessageDialog(null, "El contenido de esa posición es: "+aux.getContenido());
 	}
 
 	public boolean vacio(){
@@ -75,7 +87,7 @@ public class ListaEnlazada {
 
 	@Override
 	public String toString() {
-		return "ListaEnlazada [inicio=" + inicio +  "]";
+		return "ListaEnlazada \n[inicio=" + inicio + "\ntamaño de la lista: "+tam+ "]";
 	}
 	 
 	 
