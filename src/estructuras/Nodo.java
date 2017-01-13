@@ -30,6 +30,12 @@ public class Nodo {
 	public void setEnlace(Nodo enlace) {
 		this.enlace = enlace;
 	}
+
+	@Override
+	public String toString() {
+		return "Nodo [contenido=" + contenido + ", enlace=" + enlace + "]\n";
+	}
+	
 	
 
 }

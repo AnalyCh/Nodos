@@ -1,5 +1,7 @@
 package estructuras;
 
+import javax.swing.JOptionPane;
+
 public class ListaEnlazada {
 	 protected Nodo inicio;
 	 protected long tam;
@@ -36,10 +38,45 @@ public class ListaEnlazada {
 		}
 	}
 	
+	public void  buscar(String k){
+		String s;
+		Nodo actual= inicio;
+		if(vacio()){
+			 s= "la lista esta vacia";
+			 JOptionPane.showMessageDialog(null, s);
+			
+		}
+		
+		while(actual!=null){
+			if(actual.getContenido().equals(k)){
+				s= actual.getContenido();	
+				JOptionPane.showMessageDialog(null, s);
+				break;
+			}
+			else{
+			actual= actual.getEnlace();
+			}
+			
+		}
+		if(actual==null){
+			s= "No existe ese registro";
+			JOptionPane.showMessageDialog(null, s);
+		}
+		
+		
+		
+		
+	}
+
 	public boolean vacio(){
 		return (inicio==null);		
 	}
-	 
+
+
+	@Override
+	public String toString() {
+		return "ListaEnlazada [inicio=" + inicio +  "]";
+	}
 	 
 	 
 

@@ -10,12 +10,15 @@ public class Aplicacion {
 		ListaEnlazada lista= new ListaEnlazada();
 		
 		//JOptionPane.showOptionDialog(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
+		int c;
+		c=JOptionPane.showConfirmDialog(null,"Desea ingresar datos","datos", JOptionPane.YES_NO_OPTION);
 
 		Object o = JOptionPane.showInputDialog(null,"Seleccione un parametro",
 				   "PARÁMETROS", JOptionPane.QUESTION_MESSAGE, null,
 				  new Object[] { "Seleccione","Inicio","Final" },"Seleccione");
-		String c;
+		
 		String opc= (String) o;
+	
 		do{
 		if(opc.equals("Inicio")){
 			String e= JOptionPane.showInputDialog("Ingrese el nombre: ");
@@ -25,8 +28,15 @@ public class Aplicacion {
 			String e= JOptionPane.showInputDialog("Ingrese el nombre: ");
 			lista.insertarFinal(e);
 		}
-		c= JOptionPane.showInputDialog("Desea continuar"+ JOptionPane.YES_NO_OPTION);
-		}while(c.equals(JOptionPane.YES_OPTION));
+		c=JOptionPane.showConfirmDialog(null,"Desea ingresar datos","datos", JOptionPane.YES_NO_OPTION);
+		}while(c== JOptionPane.YES_OPTION);
+		
+		JOptionPane.showMessageDialog(null, " "+lista);
+		c= JOptionPane.showConfirmDialog(null, "Desea buscar un nombre", "nombres", JOptionPane.YES_NO_OPTION);
+		if(c==JOptionPane.YES_OPTION){
+			String k= JOptionPane.showInputDialog("Ingrese el nombre a buscar: ");
+			lista.buscar(k);
+		}
 	}
 
 }
